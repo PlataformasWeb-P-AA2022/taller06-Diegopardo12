@@ -11,5 +11,5 @@ session = Session()
 
 
 
-pais_uno = session.query(Pais).order_by(Pais.continente=="NA").all()
+pais_uno = session.query(Pais).filter(or_((Pais.continente=="NA", Pais.continente=="SA", Pais.continente=="CA"))).all()
 print(pais_uno)
