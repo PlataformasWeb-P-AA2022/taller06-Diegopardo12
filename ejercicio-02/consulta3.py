@@ -11,5 +11,7 @@ session = Session()
 
 
 
-pais_uno = session.query(Pais).order_by(Pais.continente=="NA").all()
-print(pais_uno)
+pais_tres = session.query(Pais).filter(Pais.lenguajes).all()
+print(pais_tres)
+
+

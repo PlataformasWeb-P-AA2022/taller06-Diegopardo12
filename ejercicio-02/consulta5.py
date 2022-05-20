@@ -9,7 +9,5 @@ from genera_base import engine
 Session = sessionmaker(bind=engine)
 session = Session()
 
-
-
-pais_uno = session.query(Pais).order_by(Pais.continente=="NA").all()
-print(pais_uno)
+pais_cinco = session.query(Pais).filter(and_(Pais.nombre_pais.like("%uador%"), Docente.capital.like("%ito%"))).all()
+print(pais_cinco)
